@@ -2,8 +2,9 @@
 
 Página web estática y responsive sobre Guadalajara, Jalisco.
 
-## Versión 2
+## Versión 2.1
 
+- Sección de escapadas y destinos turísticos cercanos (Puerto Vallarta, Tequila, Lago de Chapala & Ajijic, Mazamitla & Tapalpa).
 - Animaciones de entrada y revelado al desplazarse, compatibles con `prefers-reduced-motion`.
 - Sección foodie con Alcalde, Xokol y Birriería Las 9 Esquinas.
 - Resúmenes de las cuatro reseñas más recientes visibles en Google Maps al 23 de septiembre de 2026.
