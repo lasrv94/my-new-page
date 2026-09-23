@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Una mirada breve a Guadalajara: arquitectura, sabor, cultura y tradición tapatía.">
+  <meta name="theme-color" content="#102f4f">
+  <title>Guadalajara — Corazón de Jalisco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102f4f'/%3E%3Cpath d='M15 48h34M21 48V26l7-10 4 10 4-10 7 10v22M17 27h10m10 0h10' fill='none' stroke='%23f7c76b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #102f4f;
+      --paper: #fffaf1;
+      --rose: #c95f53;
+      --gold: #f7c76b;
+      --agave: #4a786f;
+      --line: rgba(16, 47, 79, .15);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .nav {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+      padding: 24px 0;
+      color: white;
+    }
+    .brand { font-weight: 600; letter-spacing: .08em; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { text-decoration: none; opacity: .82; }
+    .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
+
+    .hero {
+      position: relative;
+      min-height: min(780px, 92vh);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: white;
+      background: var(--ink);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(9,31,52,.88) 0%, rgba(9,31,52,.46) 40%, rgba(9,31,52,.05) 72%),
+                  linear-gradient(0deg, rgba(9,31,52,.62), transparent 55%),
+                  url("assets/guadalajara-hero.png") center / cover;
+      transform: scale(1.01);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 180px 0 78px;
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2 { font-family: "Playfair Display", Georgia, serif; line-height: 1.04; }
+    h1 { max-width: 680px; margin: 0; font-size: clamp(4rem, 10vw, 8.2rem); letter-spacing: -.045em; }
+    .hero-copy { max-width: 520px; margin: 24px 0 0; font-size: clamp(1rem, 2vw, 1.22rem); color: rgba(255,255,255,.86); }
+    .hero-note { display: inline-block; margin-top: 34px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.45); font-size: .9rem; }
+
+    main { overflow: hidden; }
+    section { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 104px 0; }
+    .intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; align-items: start; }
+    .section-kicker { color: var(--rose); font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin: 8px 0 22px; font-size: clamp(2.5rem, 6vw, 4.7rem); letter-spacing: -.035em; }
+    .lead { max-width: 690px; margin: 0; font-size: clamp(1.15rem, 2vw, 1.45rem); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding-bottom: 110px;
+    }
+    .card { min-height: 340px; padding: 32px; border: 1px solid var(--line); border-radius: 26px; background: rgba(255,255,255,.5); }
+    .card:nth-child(2) { transform: translateY(30px); background: var(--ink); color: white; }
+    .card-number { color: var(--rose); font-weight: 600; }
+    .card:nth-child(2) .card-number { color: var(--gold); }
+    .card h3 { margin: 70px 0 12px; font-family: "Playfair Display", Georgia, serif; font-size: 2rem; }
+    .card p { margin: 0; color: currentColor; opacity: .78; }
+
+    .quote-band { width: 100%; padding: 96px 20px; text-align: center; background: var(--rose); color: white; }
+    .quote-band blockquote { max-width: 850px; margin: auto; font-family: "Playfair Display", Georgia, serif; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.15; }
+
+    .places { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .place-list { list-style: none; margin: 30px 0 0; padding: 0; }
+    .place-list li { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .place-list span { color: var(--rose); }
+    .agave-panel { min-height: 460px; display: grid; place-items: center; padding: 50px; border-radius: 50% 50% 24px 24px; background: var(--agave); color: white; text-align: center; }
+    .agave-panel strong { display: block; font-family: "Playfair Display", Georgia, serif; font-size: clamp(3rem, 7vw, 5.4rem); line-height: 1; }
+    .agave-panel p { max-width: 330px; margin: 22px auto 0; opacity: .82; }
+
+    footer { display: flex; justify-content: space-between; gap: 20px; width: min(1120px, calc(100% - 40px)); margin: auto; padding: 36px 0; border-top: 1px solid var(--line); font-size: .9rem; }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero { min-height: 760px; }
+      .hero::before { background-position: 63% center; }
+      .hero-content { padding-bottom: 52px; }
+      .intro, .places { grid-template-columns: 1fr; gap: 28px; }
+      section { padding: 76px 0; }
+      .cards { grid-template-columns: 1fr; padding-bottom: 72px; }
+      .card, .card:nth-child(2) { min-height: 280px; transform: none; }
+      .card h3 { margin-top: 45px; }
+      .agave-panel { min-height: 360px; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">GDL · JAL</a>
+      <div class="nav-links">
+        <a href="#esencia">Esencia</a>
+        <a href="#imperdibles">Imperdibles</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">20° 40′ N · 103° 21′ O</p>
+      <h1>Guadalajara</h1>
+      <p class="hero-copy">Tradición viva, arquitectura de cantera y una energía creativa que se disfruta entre plazas, mercados y sobremesas.</p>
+      <span class="hero-note">Capital de Jalisco · México</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" id="esencia">
+      <p class="section-kicker">La Perla Tapatía</p>
+      <div>
+        <h2>Una ciudad con ritmo propio.</h2>
+        <p class="lead">Guadalajara mezcla memoria y movimiento: edificios históricos, barrios llenos de carácter, diseño contemporáneo y sabores que forman parte de la identidad mexicana.</p>
+      </div>
+    </section>
+
+    <div class="cards" aria-label="Tres formas de descubrir Guadalajara">
+      <article class="card">
+        <span class="card-number">01</span>
+        <h3>Caminar</h3>
+        <p>Recorre el Centro Histórico, mira las torres de la Catedral y cruza plazas donde la ciudad cuenta su historia.</p>
+      </article>
+      <article class="card">
+        <span class="card-number">02</span>
+        <h3>Probar</h3>
+        <p>Birria, tortas ahogadas, tejuino y jericallas: aquí la cocina es una forma deliciosa de conocer Jalisco.</p>
+      </article>
+      <article class="card">
+        <span class="card-number">03</span>
+        <h3>Escuchar</h3>
+        <p>El mariachi acompaña una escena cultural que también se expresa en galerías, foros, diseño y arte urbano.</p>
+      </article>
+    </div>
+
+    <div class="quote-band">
+      <blockquote>Entre cantera, agave y cielo azul, Guadalajara siempre encuentra una forma de sorprender.</blockquote>
+    </div>
+
+    <section class="places" id="imperdibles">
+      <div>
+        <p class="section-kicker">Para empezar</p>
+        <h2>Cuatro imperdibles.</h2>
+        <ul class="place-list">
+          <li>Hospicio Cabañas <span>Arte</span></li>
+          <li>Centro Histórico <span>Arquitectura</span></li>
+          <li>Mercado San Juan de Dios <span>Sabor</span></li>
+          <li>Tlaquepaque <span>Tradición</span></li>
+        </ul>
+      </div>
+      <aside class="agave-panel">
+        <div>
+          <strong>Jalisco<br>es México</strong>
+          <p>Una identidad hecha de música, hospitalidad, oficio y paisajes que comienzan muy cerca de la ciudad.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <span>Guadalajara, Jalisco</span>
+    <span>Hecho con orgullo tapatío</span>
+  </footer>
+</body>
+</html>
