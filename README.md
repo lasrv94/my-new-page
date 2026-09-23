@@ -2,12 +2,18 @@
 
 Página web estática y responsive sobre Guadalajara, Jalisco.
 
-## Versión 2.1
+## Versión 3.0 — Especial Puerto Vallarta & Experiencia Visual
 
-- Sección de escapadas y destinos turísticos cercanos (Puerto Vallarta, Tequila, Lago de Chapala & Ajijic, Mazamitla & Tapalpa).
-- Animaciones de entrada y revelado al desplazarse, compatibles con `prefers-reduced-motion`.
-- Sección foodie con Alcalde, Xokol y Birriería Las 9 Esquinas.
-- Resúmenes de las cuatro reseñas más recientes visibles en Google Maps al 23 de septiembre de 2026.
+- **Especial Puerto Vallarta**: Sección spotlight con galería interactiva por pestañas (Malecón al Atardecer, Playa y Muelle Los Muertos, Zona Romántica).
+- **Fotografías reales y optimizadas**: Nuevas imágenes para cada destino (Puerto Vallarta, Tequila, Lago de Chapala & Ajijic, y Mazamitla & Tapalpa).
+- **Animaciones e interactividad**:
+  - Barra de progreso de lectura superior interactiva (`scroll-progress`).
+  - Cintillo animado infinito (*marquee ticker*) con atractivos turísticos y culturales.
+  - Botón flotante animado para volver al inicio (*back-to-top*).
+  - Micro-interacciones de hover 3D y zoom en imágenes de tarjetas.
+  - Transiciones suaves entre pestañas de galería fotográfica.
+- **Sección de escapadas turísticas** enriquecida con tiempos de viaje por la nueva vía corta.
+- **Sección foodie** con reseñas actualizadas de Google Maps.
 
 ## Ver localmente
 
