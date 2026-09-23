@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from './Navbar';
+import { trackEvent } from '../utils/analytics';
 
 export const Hero: React.FC = () => {
   return (
@@ -14,7 +15,13 @@ export const Hero: React.FC = () => {
       />
       <Navbar />
       <div className="hero-content">
-        <a href="#vallarta" className="hero-badge-pill">
+        <a
+          href="#vallarta"
+          className="hero-badge-pill"
+          onClick={() =>
+            trackEvent('click_hero_badge', { target_section: 'vallarta' })
+          }
+        >
           <span className="pulsing-dot" />
           Nueva Vía Corta: ¡Puerto Vallarta a solo 2.5h! ↗
         </a>

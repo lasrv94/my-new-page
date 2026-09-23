@@ -1,5 +1,6 @@
 import React from 'react';
 import { restaurantsData } from '../data/restaurants';
+import { trackEvent } from '../utils/analytics';
 
 export const Foodie: React.FC = () => {
   return (
@@ -32,6 +33,12 @@ export const Foodie: React.FC = () => {
                   href={`https://www.google.com/maps/search/?api=1&query=${restaurant.mapsQuery}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent('click_restaurant_maps', {
+                      restaurant_name: restaurant.name,
+                      cuisine: restaurant.cuisine,
+                    })
+                  }
                 >
                   Ver en Google Maps ↗
                 </a>

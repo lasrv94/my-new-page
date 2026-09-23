@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { initGA } from './utils/analytics';
 import { ScrollProgress } from './components/ScrollProgress';
 import { Hero } from './components/Hero';
 import { MarqueeTicker } from './components/MarqueeTicker';
@@ -13,6 +14,9 @@ import { BackToTop } from './components/BackToTop';
 
 export const App: React.FC = () => {
   useEffect(() => {
+    // Inicializar Google Analytics 4
+    initGA();
+
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

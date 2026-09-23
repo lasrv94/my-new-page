@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { vallartaTabsData, vallartaStatsData } from '../data/vallarta';
+import { trackEvent } from '../utils/analytics';
 
 export const VallartaSpotlight: React.FC = () => {
   const [activeTabId, setActiveTabId] = useState<string>('sunset');
@@ -10,6 +11,13 @@ export const VallartaSpotlight: React.FC = () => {
 
   const handleTabChange = (tabId: string) => {
     if (tabId === activeTabId) return;
+
+    const selectedTab = vallartaTabsData.find((t) => t.id === tabId);
+    trackEvent('select_vallarta_tab', {
+      tab_id: tabId,
+      tab_title: selectedTab?.title,
+    });
+
     setIsFading(true);
     setTimeout(() => {
       setActiveTabId(tabId);
@@ -83,6 +91,12 @@ export const VallartaSpotlight: React.FC = () => {
               href={`https://www.google.com/maps/search/?api=1&query=${activeTab.mapsQuery}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent('click_maps_link', {
+                  category: 'vallarta_spotlight',
+                  place: activeTab.title,
+                })
+              }
             >
               Ver en Maps ↗
             </a>

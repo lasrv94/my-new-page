@@ -24,6 +24,22 @@ El portal ha sido transformado en una aplicación web moderna basada en componen
   - `BackToTop`: Botón flotante para regresar rápidamente al inicio.
 - **Datos Estructurados (`src/data/`)**: Separación clara entre vista y datos de destinos, gastronomía y galerías.
 - **Automatización**: Flujo de trabajo en GitHub Actions (`.github/workflows/deploy.yml`) para compilación y despliegue continuo en GitHub Pages.
+- **Google Analytics 4 (GA4)**: Módulo nativo con soporte para variable de entorno `VITE_GA_MEASUREMENT_ID` y seguimiento de eventos clave (galerías, mapas, enlaces).
+
+---
+
+## Configuración de Google Analytics (GA4)
+
+1. Crea o edita el archivo `.env` en la raíz del proyecto (toma como referencia `.env.example`):
+   ```env
+   VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+   ```
+   *(Reemplaza `G-XXXXXXXXXX` con tu ID de medición obtenido en Google Analytics > Administrador > Flujos de datos).*
+
+2. Para que las métricas funcionen en GitHub Pages:
+   - Ve a tu repositorio en GitHub > **Settings** > **Secrets and variables** > **Actions** > **Variables**.
+   - Agrega una nueva variable llamada `VITE_GA_MEASUREMENT_ID` con el valor de tu ID (`G-XXXXXXXXXX`).
+   - El flujo de GitHub Actions la tomará automáticamente durante la compilación.
 
 ---
 
