@@ -158,6 +158,91 @@
     .review p { margin: 8px 0 0; font-size: .92rem; line-height: 1.5; color: rgba(16,47,79,.78); }
     .foodie-note { margin: 28px 0 0; color: rgba(255,255,255,.56); font-size: .86rem; }
 
+    .destinations-section {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+      padding: 104px 0 120px;
+    }
+    .destinations-head { margin-bottom: 48px; }
+    .destinations-head h2 { margin: 8px 0 16px; font-size: clamp(2.4rem, 5.5vw, 4.2rem); letter-spacing: -.03em; }
+    .destinations-head p { max-width: 680px; margin: 0; font-size: 1.15rem; color: rgba(16, 47, 79, .82); }
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+    .destination-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 340px;
+      padding: 32px 28px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, .6);
+      backdrop-filter: blur(8px);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+    .destination-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201, 95, 83, .45);
+      box-shadow: 0 18px 36px rgba(16, 47, 79, .08);
+    }
+    .destination-card.featured {
+      background: var(--ink);
+      color: white;
+      border-color: transparent;
+    }
+    .destination-card.featured:hover {
+      border-color: rgba(247, 199, 107, .4);
+      box-shadow: 0 18px 36px rgba(11, 41, 67, .25);
+    }
+    .destination-badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(16, 47, 79, .07);
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .destination-card.featured .destination-badge {
+      background: rgba(247, 199, 107, .18);
+      color: var(--gold);
+    }
+    .destination-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.75rem;
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+    .destination-card p {
+      margin: 0 0 24px;
+      font-size: .94rem;
+      line-height: 1.55;
+      opacity: .85;
+    }
+    .destination-footer {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .84rem;
+      font-weight: 600;
+      color: var(--rose);
+    }
+    .destination-card.featured .destination-footer {
+      border-top-color: rgba(255, 255, 255, .15);
+      color: var(--gold);
+    }
+
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.75,.25,1); }
     .reveal.is-visible { opacity: 1; transform: none; }
     @keyframes rise-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
@@ -170,8 +255,9 @@
       .hero::before { background-position: 63% center; }
       .hero-content { padding-bottom: 52px; }
       .intro, .places, .foodie-head, .restaurant { grid-template-columns: 1fr; gap: 28px; }
-      section { padding: 76px 0; }
-      .cards { grid-template-columns: 1fr; padding-bottom: 72px; }
+      section, .destinations-section { padding: 76px 0; }
+      .cards, .destinations-grid { grid-template-columns: 1fr; }
+      .cards { padding-bottom: 72px; }
       .card, .card:nth-child(2) { min-height: 280px; transform: none; }
       .card h3 { margin-top: 45px; }
       .agave-panel { min-height: 360px; }
@@ -194,8 +280,9 @@
       <a class="brand" href="#inicio">GDL · JAL</a>
       <div class="nav-links">
         <a href="#esencia">Esencia</a>
-        <a href="#imperdibles">Imperdibles</a>
         <a href="#foodie">Foodie</a>
+        <a href="#imperdibles">Imperdibles</a>
+        <a href="#destinos">Cerca de GDL</a>
       </div>
     </nav>
     <div class="hero-content">
@@ -317,6 +404,64 @@
           <p>Una identidad hecha de música, hospitalidad, oficio y paisajes que comienzan muy cerca de la ciudad.</p>
         </div>
       </aside>
+    </section>
+
+    <section class="destinations-section reveal" id="destinos">
+      <div class="destinations-head">
+        <p class="section-kicker">Escapadas desde Guadalajara</p>
+        <h2>Destinos cercanos: del mar a la sierra.</h2>
+        <p>A pocas horas de la Perla Tapatía encontrarás playas de fama mundial, pueblos mágicos entre bosques y el corazón de la cultura agavera.</p>
+      </div>
+
+      <div class="destinations-grid">
+        <article class="destination-card featured">
+          <div>
+            <span class="destination-badge">Costa · Pacífico</span>
+            <h3>Puerto Vallarta</h3>
+            <p>Playas doradas, su icónico malecón, alta gastronomía marina y atardeceres legendarios sobre la Bahía de Banderas. Con la nueva autopista vía corta se llega en aprox. 2.5 a 3 horas.</p>
+          </div>
+          <div class="destination-footer">
+            <span>🚗 ~3 h en auto</span>
+            <span>Playa y Malecón</span>
+          </div>
+        </article>
+
+        <article class="destination-card">
+          <div>
+            <span class="destination-badge">Pueblo Mágico</span>
+            <h3>Tequila</h3>
+            <p>Tierra del destilado insignia de México y paisajes agaveros declarados Patrimonio de la Humanidad por la UNESCO. Destilerías legendarias y recorridos en tren.</p>
+          </div>
+          <div class="destination-footer">
+            <span>🚗 ~1 h</span>
+            <span>Ruta del Agave</span>
+          </div>
+        </article>
+
+        <article class="destination-card">
+          <div>
+            <span class="destination-badge">Ribera & Encanto</span>
+            <h3>Chapala y Ajijic</h3>
+            <p>El lago más grande de México. Ajijic cautiva con su ambiente bohemio, galerías de arte, paseos sobre el malecón, nieves tradicionales y clima privilegiado.</p>
+          </div>
+          <div class="destination-footer">
+            <span>🚗 ~50 min</span>
+            <span>Ribera del Lago</span>
+          </div>
+        </article>
+
+        <article class="destination-card">
+          <div>
+            <span class="destination-badge">Sierra & Bosque</span>
+            <h3>Mazamitla y Tapalpa</h3>
+            <p>El encanto de la montaña jalisciense: acogedoras cabañas con chimenea, niebla entre los pinos, cascadas cristalinas y aventura al aire libre en la sierra.</p>
+          </div>
+          <div class="destination-footer">
+            <span>🚗 ~2 h</span>
+            <span>Montaña y Cabañas</span>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
